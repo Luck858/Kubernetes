@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gurnted
+  labels:
+    purpose: learning
+    app: web
+spec:
+  containers:
+    - name: alpine
+      image: httpd
+      resources:
+        limits:
+          cpu: 10m
+          memory: 64Mi
+        requests:
+          cpu: 10m
+          memory: 64Mi
+      ports:
+        - name: portnumber
+          protocol: TCP
+          containerPort: 8080
+    
