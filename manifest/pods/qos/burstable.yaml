@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+  labels: 
+    env: dev
+    purpose: learning
+    app: httpd
+spec:
+  containers:
+    - name: httpd
+      image: httpd:latest
+      resources:
+        limits:
+          cpu: 0.2m
+          memory: 200mi
+        requests:
+          cpu: 0.1m
+          memory: 100mi
+      ports:
+        - containerPort: 80
+          protocol: TCP
